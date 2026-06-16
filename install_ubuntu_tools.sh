@@ -91,6 +91,7 @@ echo "Clearing machine-id for clean VM clones..."
 sudo truncate -s 0 /etc/machine-id
 sudo rm -f /var/lib/dbus/machine-id
 sudo ln -sf /etc/machine-id /var/lib/dbus/machine-id
+sudo sh -c "dbus-uuidgen > /etc/machine-id"
 
 echo "Setting timezone to Pacific Time..."
 sudo timedatectl set-timezone America/Los_Angeles
